@@ -1,6 +1,6 @@
 # Github Trends
 
-[TODO. There will be project description]
+Show top 20 repos on GitHub with most stars created last week and open issues amount 
 
 # Project Goals
 
