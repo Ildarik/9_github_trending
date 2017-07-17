@@ -20,8 +20,5 @@ def get_open_issues_amount(repo_owner, repo_name):
 if __name__ == '__main__':
     trending_repositories = get_trending_repositories(20)
     for repo in trending_repositories:
-        repo_owner = repo['owner']['login']
-        repo_name = repo['name']
-        repo_url = repo['html_url']
-        open_issues_amount = get_open_issues_amount(repo_owner, repo_name)
-        print('Repo url: {}, open issues amount: {}'.format(repo_url, open_issues_amount))
+        open_issues_amount = get_open_issues_amount(repo['owner']['login'], repo['name'])
+        print('Repo url: {}, open issues amount: {}'.format(repo['html_url'], open_issues_amount))
