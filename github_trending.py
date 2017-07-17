@@ -4,9 +4,9 @@ from datetime import datetime, timedelta
 
 def get_trending_repositories(top_size):
     period_of_days = 7
-    datetime_period_ago = datetime.now() - timedelta(days=period_of_days)
+    datetime_period_of_days_ago = datetime.now() - timedelta(days=period_of_days)
     base_url = 'https://api.github.com/search/repositories?'
-    payload = {'q': 'created:>' + str(datetime_period_ago.date()), 'sort': 'stars'}
+    payload = {'q': 'created:>' + str(datetime_period_of_days_ago.date()), 'sort': 'stars'}
     trending_repositories = requests.get(base_url, params=payload)
     repos = trending_repositories.json()['items']
     return repos[:top_size]
